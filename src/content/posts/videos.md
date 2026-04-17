@@ -7,7 +7,6 @@ category: Examples
 draft: false
 ---
 
-
 ## Instructions
 
 Just copy the embed code from YouTube or other platforms, and paste it in the markdown file as below:
@@ -22,7 +21,6 @@ published: 2023-10-19
 <iframe width="100%" height="468" src="https://www.youtube.com/embed/yrn7eInApnc?si=gGZeFbPcfMpJ1uV3_" title="YouTube video player" frameborder="0" allowfullscreen></iframe>
 ```
 
-
 ## Examples
 
 ### YouTube
@@ -31,4 +29,4 @@ published: 2023-10-19
 
 ### Bilibili
 
-<iframe width="100%" height="468" src="//player.bilibili.com/player.html?bvid=BV14QpMeSEuD&p=1&autoplay=0" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true" &autoplay=0> </iframe>
+<iframe width="100%" height="468" src="https://player.bilibili.com/player.html?bvid=BV14QpMeSEuD&p=1&autoplay=0" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true"></iframe>
