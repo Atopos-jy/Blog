@@ -1,11 +1,18 @@
-# About This Site
+# About This Site & Me
 
-Twilight is a CMS integrated static blog template built with [Astro](https://astro.build) framework.
+Hi，我是 Atopos-jy，一个在代码里沉淀温柔，在文字里安放热爱的开发者。
+于代码中沉静，在烟火里温柔，不疾不徐，不慌不忙，把每一份热爱都藏进日常，把每一次成长都记录成诗。我偏爱简洁而有温度的事物，就像我写的代码、记录的文字，不追求繁复，只愿真诚、清晰、有力量。
 
-::github{repo="Spr-Aachen/Twilight"}
+我始终相信，技术不止是冰冷的代码，更是传递温度的工具；成长不必急于求成，沉淀本身就是一种力量。愿这个小小的博客，既能成为我复盘成长的自留地，也能为路过的你，带来一丝启发与温暖。
+如果你也喜欢技术、热爱生活，欢迎通过GitHub与我交流，一起奔赴更远的山海。
 
+## About This Site
 
-## Milestones
+This site is built with the Astro framework, based on the Twilight CMS integrated static blog template. It focuses on simplicity, performance and warmth, used to record technical notes, growth insights and life bits and pieces.
+My GitHub
+::github{repo="Atopos-jy/Blog"}
+
+## Template Milestones
 
 - Integrated content management system in [#1](https://github.com/Spr-Aachen/Twilight/pull/1)
 - Seamless wallpaper mode switching in [#2](https://github.com/Spr-Aachen/Twilight/pull/2)

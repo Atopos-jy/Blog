@@ -279,9 +279,9 @@ profile:
   # 头像配置 (相对于 /public 目录)
   avatar: "/assets/images/avatar.jpg"
   # 信息配置
-  name: "Twilight"
+  name: "Atopos"
   # 简介配置
-  bio: "Hi"
+  bio: "心有山海，静而不争"
   # 链接配置
   links:
     - # 链接示例
