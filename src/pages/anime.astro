@@ -10,7 +10,7 @@ import { i18n } from "@i18n/translation";
 import ImageWrapper from "@components/common/imageWrapper.astro";
 import GridLayout from "@layouts/grid.astro";
 import BackwardButton from "@components/backwardButton.astro";
-import { ProxyAgent, fetch as undiciFetch } from "undici";
+
 
 
 const pageTitle = LinkPresets[LinkPreset.Anime].name;
@@ -22,10 +22,13 @@ const BANGUMI_API_BASE = "https://api.bgm.tv";
 
 // 代理配置：本地构建时走代理，CI/CD 环境不需要
 const proxyUrl = process.env.HTTPS_PROXY || process.env.HTTP_PROXY || "";
-const fetchWithProxy = proxyUrl
-    ? (url: string) => undiciFetch(url, { dispatcher: new ProxyAgent(proxyUrl) } as any)
-    : (url: string) => fetch(url);
-
+const fetchWithProxy = async (url: string) => {
+    return fetch(url, {
+        headers: {
+            'User-Agent': 'Atopos-Blog/1.0 (Astro-Site)'
+        }
+    });
+};
 // 检查是否配置了有效的 Bangumi 用户 ID
 const isBangumiConfigured = 
     BANGUMI_USER_ID && 
