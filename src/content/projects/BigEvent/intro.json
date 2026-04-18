@@ -1,21 +1,14 @@
 {
-    "title": "Twilight Blog Template",
-    "description": "A CMS integrated blog theme built with Astro framework.",
-    "image": "./Twilight_Cover.jpg",
-    "category": "website",
-    "techStack": [
-        "Astro",
-        "Svelte",
-        "Tailwind CSS"
-    ],
-    "status": "in-progress",
-    "liveDemo": "https://twilight.spr-aachen.com",
-    "sourceCode": "https://github.com/Spr-Aachen/Twilight",
-    "startDate": "2025-10-01",
-    "endDate": "",
-    "featured": true,
-    "tags": [
-        "Personal Project",
-        "Open Source Project"
-    ]
+  "title": "BigEvent",
+  "description": "A modern admin dashboard built with Vue 3 and CSS.",
+  "image": "./BigEvent_Cover.png",
+  "category": "website",
+  "techStack": ["Vue3", "MySQL", "CSS"],
+  "status": "in-progress",
+  "liveDemo": "http://47.99.125.73/login",
+  "sourceCode": "https://github.com/Atopos-jy/Vue3_admin.git",
+  "startDate": "2025-10-01",
+  "endDate": "",
+  "featured": true,
+  "tags": ["Personal Project", "Open Source Project"]
 }

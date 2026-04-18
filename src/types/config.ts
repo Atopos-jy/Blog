@@ -113,8 +113,8 @@ export type SiteConfig = {
         | string
         | string[]
         | {
-            desktop?: string | string[];
-            mobile?: string | string[];
+            desktop?: string | string[]; // 支持图片与视频路径（如 .mp4/.webm）
+            mobile?: string | string[]; // 支持图片与视频路径（如 .mp4/.webm）
         };
         // 壁纸位置，等同于 object-position
         position?: "top" | "center" | "bottom";
@@ -306,8 +306,17 @@ export type ProfileConfig = {
     // 链接配置
     links: {
         name: string;
-        url: string;
         icon: string;
+        // 品牌色（可选），如 "#181717"、"#06b6d4"
+        color?: string;
+        // 行为类型：link(默认跳转) | copy(点击复制)
+        action?: "link" | "copy";
+        // action 为 link 时使用
+        url?: string;
+        // action 为 copy 时使用，复制到剪贴板的内容
+        copyValue?: string;
+        // action 为 copy 时使用，按钮提示文案（可选）
+        copyHint?: string;
     }[];
 };
 

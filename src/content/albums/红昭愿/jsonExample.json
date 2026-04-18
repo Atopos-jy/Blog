@@ -1,0 +1,27 @@
+{
+  "title": "Album 红昭愿",
+  "description": "手中雕刻生花,刀锋千转蜿蜒成画",
+  "cover": "./红昭愿.png",
+  "date": "2026-04-18T00:00:00.000Z",
+  "location": "中国",
+  "tags": ["Antique"],
+  "layout": "masonry",
+  "columns": 3,
+  "photos": [
+    {
+      "src": "./红昭愿.png",
+      "alt": "红昭愿",
+      "title": "红昭愿",
+      "description": "This is a beautiful image from local file",
+      "tags": ["human"]
+    },
+    {
+      "src": "https://picsum.photos/800/600?random=2",
+      "alt": "random image",
+      "title": "Random Image",
+      "description": "This is a beautiful image from external link",
+      "tags": ["scenary"]
+    }
+  ],
+  "visible": true
+}

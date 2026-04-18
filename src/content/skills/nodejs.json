@@ -1,0 +1,13 @@
+{
+  "name": "Node.js",
+  "description": "JavaScript runtime built on Chrome's V8 engine for server-side development.",
+  "icon": "logos:nodejs",
+  "category": "backend",
+  "level": "beginner",
+  "experience": {
+    "years": 0,
+    "months": 3
+  },
+  "projects": [],
+  "color": "#339933"
+}

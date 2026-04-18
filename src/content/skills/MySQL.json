@@ -1,0 +1,13 @@
+{
+  "name": "MySQL",
+  "description": "An open-source relational database management system.",
+  "icon": "logos:mysql",
+  "category": "database",
+  "level": "beginner",
+  "experience": {
+    "years": 0,
+    "months": 2
+  },
+  "projects": [],
+  "color": "#4479a1"
+}

@@ -19,6 +19,7 @@ import { pathsEqual, url } from "@utils/url";
 import FontLoader from "@components/fontLoader.astro";
 import LoadingOverlay from "@components/loadingOverlay.astro";
 import ConfigCarrier from "@components/configCarrier.astro";
+import StarCursor from "@components/common/StarCursor.astro";
 import MusicPlayer from "@components/musicPlayer.svelte";
 import Pio from "@components/pio.svelte";
 import "@styles/navbar.css";
@@ -236,6 +237,7 @@ const { enabled: analyticsEnabled, code: analyticsCode } = getAnalyticsConfig();
         {pioConfig.enable && <Pio client:visible />}
         <!-- increase the page height during page transition to prevent the scrolling animation from jumping -->
         <div id="page-height-extend" class="hidden h-[300vh]"></div>
+        <StarCursor />
     </body>
 </html>
 

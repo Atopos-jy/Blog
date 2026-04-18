@@ -10,6 +10,7 @@ import { i18n } from "@i18n/translation";
 import ImageWrapper from "@components/common/imageWrapper.astro";
 import GridLayout from "@layouts/grid.astro";
 import BackwardButton from "@components/backwardButton.astro";
+import { ProxyAgent, fetch as undiciFetch } from "undici";
 
 
 const pageTitle = LinkPresets[LinkPreset.Anime].name;
@@ -18,6 +19,12 @@ const pageDescription = LinkPresets[LinkPreset.Anime].description;
 // Bangumi API配置
 const BANGUMI_USER_ID = siteConfig.bangumi?.userId || "";
 const BANGUMI_API_BASE = "https://api.bgm.tv";
+
+// 代理配置：本地构建时走代理，CI/CD 环境不需要
+const proxyUrl = process.env.HTTPS_PROXY || process.env.HTTP_PROXY || "";
+const fetchWithProxy = proxyUrl
+    ? (url: string) => undiciFetch(url, { dispatcher: new ProxyAgent(proxyUrl) } as any)
+    : (url: string) => fetch(url);
 
 // 检查是否配置了有效的 Bangumi 用户 ID
 const isBangumiConfigured = 
@@ -29,7 +36,7 @@ const isBangumiConfigured =
 async function fetchSubjectPersons(subjectId: number) {
     if (!isBangumiConfigured) return [];
     try {
-        const response = await fetch(
+        const response = await fetchWithProxy(
             `${BANGUMI_API_BASE}/v0/subjects/${subjectId}/persons`,
         );
         const data = await response.json();
@@ -55,7 +62,7 @@ async function fetchBangumiCollection(
 
         // 循环获取所有数据
         while (hasMore) {
-            const response = await fetch(
+            const response = await fetchWithProxy(
                 `${BANGUMI_API_BASE}/v0/users/${userId}/collections?subject_type=${subjectType}&type=${type}&limit=${limit}&offset=${offset}`,
             );
             if (!response.ok) {

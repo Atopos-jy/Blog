@@ -1,0 +1,24 @@
+{
+  "title": "BigEvent",
+  "description": "My first open source template project, a CMS integrated blog template built with Astro framework.",
+  "type": "project",
+  "startDate": "2025-12-14",
+  "endDate": "2026-04-18",
+  "skills": ["Vue3", "MySQL", "CSS"],
+  "achievements": [],
+  "links": [
+    {
+      "name": "Online Demo",
+      "url": "http://47.99.125.73/login",
+      "type": "project"
+    },
+    {
+      "name": "GitHub Repository",
+      "url": "https://github.com/Atopos-jy/Vue3_admin.git",
+      "type": "project"
+    }
+  ],
+  "icon": "material-symbols:code",
+  "color": "#7C3AED",
+  "featured": true
+}

@@ -1,0 +1,13 @@
+{
+  "title": "通信工程",
+  "description": "主修课程包括算法分析、操作系统、数据库系统等。在校期间获得过二等奖学金。",
+  "type": "education",
+  "startDate": "2023-09-01",
+  "endDate": "2027-06-30",
+  "organization": "河南科技学院",
+  "location": "新乡, 中国",
+  "icon": "material-symbols:school",
+  "color": "#3B82F6",
+  "featured": true,
+  "achievements": ["获得优秀毕业生称号", "校级编程竞赛一等奖"]
+}

@@ -41,6 +41,7 @@
 		"astro-expressive-code": "^0.41.7",
 		"astro-icon": "^1.1.5",
 		"crypto-js": "^4.2.0",
+		"cursor-effects": "^1.0.18",
 		"dayjs": "^1.11.19",
 		"decap-cms-oauth-astro": "^0.1.1",
 		"echarts": "^6.0.0",

@@ -37,16 +37,49 @@ const id = `profile-${side}`;
         <div class="h-1 w-5 bg-(--primary) mx-auto rounded-full mb-2 transition"></div>
         <div class="text-center text-neutral-400 mb-2.5 transition">{profileConfig.bio}</div>
         <div class="flex gap-2 justify-center mb-1">
-            {profileConfig.links.length > 1 && profileConfig.links.map(item =>
-                    <a rel="me" aria-label={item.name} href={item.url} target="_blank" class="btn-regular rounded-lg h-10 w-10 active:scale-90">
-                        <Icon name={item.icon} class="text-[1.5rem]"></Icon>
+            {profileConfig.links.map(item => {
+                const isSingleLink = profileConfig.links.length === 1;
+                const action = item.action ?? "link";
+                const inlineColor = item.color ? `color: ${item.color};` : undefined;
+                const copyPayload = item.copyValue ?? "";
+                const copyHint = item.copyHint ?? `${item.name} copied`;
+
+                if (action === "copy") {
+                    return (
+                        <button
+                            type="button"
+                            aria-label={`Copy ${item.name}`}
+                            title={copyHint}
+                            data-profile-copy-btn
+                            data-copy-value={copyPayload}
+                            data-copy-hint={copyHint}
+                            class:list={[
+                                "profile-copy-btn btn-regular rounded-lg active:scale-90 text-(--btn-content)!",
+                                isSingleLink ? "h-10 gap-2 px-3 font-bold active:scale-95" : "h-10 w-10"
+                            ]}
+                        >
+                            <Icon name={item.icon} class="text-[1.5rem] text-(--btn-content)!" style={inlineColor}></Icon>
+                            {isSingleLink && item.name}
+                        </button>
+                    );
+                }
+
+                return (
+                    <a
+                        rel="me"
+                        aria-label={item.name}
+                        href={item.url ?? "#"}
+                        target="_blank"
+                        class:list={[
+                            "btn-regular rounded-lg active:scale-90 text-(--btn-content)!",
+                            isSingleLink ? "h-10 gap-2 px-3 font-bold active:scale-95" : "h-10 w-10"
+                        ]}
+                    >
+                        <Icon name={item.icon} class="text-[1.5rem] text-(--btn-content)!" style={inlineColor}></Icon>
+                        {isSingleLink && item.name}
                     </a>
-            )}
-            {profileConfig.links.length == 1 && <a rel="me" aria-label={profileConfig.links[0].name} href={profileConfig.links[0].url} target="_blank"
-                                            class="btn-regular rounded-lg h-10 gap-2 px-3 font-bold active:scale-95">
-                <Icon name={profileConfig.links[0].icon} class="text-[1.5rem]"></Icon>
-                {profileConfig.links[0].name}
-            </a>}
+                );
+            })}
         </div>
         {analyticsEnabled && (
             <hr class="my-2 border-t border-dashed border-gray-300 dark:border-gray-700" />
@@ -65,6 +98,30 @@ const id = `profile-${side}`;
     </div>
 </div>
 
+<style>
+    .profile-copy-btn {
+        position: relative;
+    }
+
+    .profile-copy-btn.copied::after {
+        content: attr(data-copy-feedback);
+        position: absolute;
+        left: 50%;
+        top: -0.45rem;
+        transform: translate(-50%, -100%);
+        font-size: 0.72rem;
+        line-height: 1;
+        white-space: nowrap;
+        padding: 0.25rem 0.5rem;
+        border-radius: 0.45rem;
+        background: color-mix(in oklab, var(--btn-regular-bg) 78%, black);
+        color: var(--btn-content);
+        box-shadow: 0 2px 10px rgb(0 0 0 / 18%);
+        pointer-events: none;
+        z-index: 1;
+    }
+</style>
+
 {analyticsEnabled && (
     <script>
         import { initAnalyticsStats } from "@utils/analytics";
@@ -76,3 +133,60 @@ const id = `profile-${side}`;
         });
     </script>
 )}
+
+<script is:inline>
+  // 使用匿名函数包裹，避免污染全局变量，同时确保立即执行
+  (() => {
+    const handleCopyAction = async (e) => {
+      // 1. 寻找点击链条中是否包含目标按钮
+      const btn = e.target.closest("[data-profile-copy-btn]");
+      
+      if (!btn) return;
+
+      // 阻止默认行为（如果是放在 a 标签里的按钮）
+      e.preventDefault();
+
+
+      const textToCopy = btn.getAttribute("data-copy-value") || "";
+      const feedbackText = btn.getAttribute("data-copy-hint") || "Done!";
+
+      if (!textToCopy) {
+        return;
+      }
+
+      try {
+        // 执行写入剪贴板
+        await navigator.clipboard.writeText(textToCopy);
+        
+        // UI 反馈
+        btn.classList.add("copied");
+        btn.setAttribute("data-copy-feedback", feedbackText);
+        
+        // 1.3秒后移除动画状态
+        setTimeout(() => {
+          btn.classList.remove("copied");
+        }, 1300);
+
+      } catch (err) {
+        // 兜底方案：万一 Clipboard API 被禁用
+        console.error("写入失败，尝试备用方案...", err);
+        const textArea = document.createElement("textarea");
+        textArea.value = textToCopy;
+        document.body.appendChild(textArea);
+        textArea.select();
+        document.execCommand("copy");
+        document.body.removeChild(textArea);
+        
+        btn.classList.add("copied");
+        setTimeout(() => btn.classList.remove("copied"), 1300);
+      }
+    };
+
+    // 绑定到 window 对象，这样不管 Swup 怎么刷新页面内容，
+    // 只要 window 不销毁，监听就一直存在（事件委托模式）
+    // 先移除旧监听防止在开发环境下热更新导致的重复绑定
+    window.removeEventListener("click", handleCopyAction);
+    window.addEventListener("click", handleCopyAction);
+
+  })();
+</script>

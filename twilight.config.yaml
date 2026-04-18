@@ -49,17 +49,15 @@ site:
   wallpaper:
     # 模式 ("banner" 横幅 | "fullscreen" 全屏 | "none" 纯色)
     mode: "banner"
-    # 图片源配置 (fullscreen 和 banner 模式共享)
+    # 背景源配置 (fullscreen 和 banner 模式共享)
     src:
-      # 桌面壁纸图片 (相对于 /public 目录; 支持单张图片或图片数组，当数组长度 > 1 时自动启用轮播)
+      # 桌面壁纸媒体 (相对于 /public 目录; 支持图片/视频，如 .jpg/.png/.webp/.gif/.mp4/.webm;
+      # 支持单个路径或路径数组，当数组长度 > 1 时自动启用轮播)
       desktop:
-        - "/assets/images/desktopWallpaper_1.jpg"
-        - "/assets/images/desktopWallpaper_2.jpg"
-        - "/assets/images/desktopWallpaper_3.jpg"
-      # 移动壁纸图片 (相对于 /public 目录; 支持单张图片或图片数组，当数组长度 > 1 时自动启用轮播)
+        - "/assets/videos/desktop-bg_1.mp4"
+      # 移动壁纸媒体 (相对于 /public 目录; 支持单个路径或路径数组)
       mobile:
-        - "/assets/images/mobileWallpaper_1.jpg"
-        - "/assets/images/mobileWallpaper_2.jpg"
+        - "/assets/videos/desktop-bg_1.mp4"
     # 壁纸位置 ('top' | 'center' | 'bottom')
     position: "center"
     # 轮播配置 (fullscreen 和 banner 模式共享)
@@ -77,10 +75,10 @@ site:
         # 在主页显示文本
         enable: true
         # 主标题
-        title: "Twilight"
+        title: "Atopos"
         # 副标题，支持单个字符串或字符串数组
         subtitle:
-          - "Illuminate Our Paths"
+          - "Welcome to my blog, glad youre here."
         # 副标题打字机效果
         typewriter:
           # 启用副标题打字机效果
@@ -145,7 +143,7 @@ site:
   # bangumi 配置
   bangumi:
     # 用户 ID
-    userId: "your-bangumi-id"
+    userId: "1238454"
   # OpenGraph 配置
   generateOgImages: false
 
@@ -289,8 +287,36 @@ profile:
       name: "GitHub"
       # 图标
       icon: "fa6-brands:github"
+      # 品牌色（可选）
+      color: "#181717"
+      # 行为（link 或 copy，默认 link）
+      action: "link"
       # 链接
       url: "https://github.com/Atopos-jy/Blog.git"
+
+    - name: "Email"
+      # 图标
+      icon: "fa6-solid:envelope"
+      # 品牌色（可选）
+      color: "#ea4335"
+      # action=copy 时复制 copyValue，而不是跳转 url
+      action: "copy"
+      # 要复制的内容
+      copyValue: "yourname@example.com"
+      # 复制成功提示（可选）
+      copyHint: "邮箱已复制"
+
+    - name: "Wechat"
+      # 图标
+      icon: "fa6-brands:weixin"
+      # 品牌色（可选）
+      color: "#07c160"
+      # action=copy 时复制 copyValue，而不是跳转 url
+      action: "copy"
+      # 要复制的内容
+      copyValue: "your_wechat_id"
+      # 复制成功提示（可选）
+      copyHint: "微信号已复制"
 
 # 公告配置
 announcement:
@@ -391,7 +417,7 @@ musicPlayer:
   # 启用音乐播放器功能
   enable: true
   # 默认模式 ("meting" API | "local" 本地)
-  mode: "meting"
+  mode: "local"
   # meting 模式专属配置
   meting:
     # Meting API 地址
