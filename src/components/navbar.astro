@@ -38,18 +38,45 @@ let links: NavbarLink[] = navbarConfig.links.map(
     <div class:list={[
         className,
         "overflow-visible! max-w-(--page-width) h-18 mx-auto flex items-center justify-between md:px-4"]}>
-        <a href={url('/')} class="btn-plain scale-animation rounded-lg h-13 px-5 font-bold active:scale-95">
-            <div class="flex flex-row text-(--primary) items-center text-md">
-                <Icon name="material-symbols:home-pin-outline" class="text-[1.75rem] mb-1 mr-2" />
-                {siteConfig.title}
-            </div>
-        </a>
+
+        <!-- 左侧：移动端侧边栏按钮 + 桌面端 Logo -->
+        <div class="flex items-center min-w-0 flex-1 md:flex-none">
+            <!-- 移动端侧边栏抽屉按钮 -->
+            <button
+                id="sidebar-drawer-btn"
+                aria-label="Open Sidebar"
+                class="btn-plain scale-animation rounded-lg w-11 h-11 active:scale-90 md:hidden mr-1"
+            >
+                <Icon name="material-symbols:left-panel-open-outline-rounded" class="text-[1.25rem]" />
+            </button>
+            <!-- Logo（桌面端显示，移动端隐藏） -->
+            <a href={url('/')} class="btn-plain scale-animation rounded-lg h-13 px-5 font-bold active:scale-95 hidden md:flex">
+                <div class="flex flex-row text-(--primary) items-center text-md">
+                    <Icon name="material-symbols:home-pin-outline" class="text-[1.75rem] mb-1 mr-2" />
+                    {siteConfig.title}
+                </div>
+            </a>
+        </div>
+
+        <!-- 中间：移动端 Logo 居中 -->
+        <div class="absolute left-1/2 -translate-x-1/2 md:hidden">
+            <a href={url('/')} class="btn-plain scale-animation rounded-lg h-13 px-3 font-bold active:scale-95">
+                <div class="flex flex-row text-(--primary) items-center text-md">
+                    <Icon name="material-symbols:home-pin-outline" class="text-[1.75rem] mb-1 mr-2" />
+                    {siteConfig.title}
+                </div>
+            </a>
+        </div>
+
+        <!-- 桌面端导航链接 -->
         <div class="hidden md:flex items-center navbar-nav-links">
             {links.map((l) => {
                 return <NavLinks link={l} />;
             })}
         </div>
-        <div class="flex items-center navbar-buttons" id="navbar-buttons">
+
+        <!-- 右侧按钮组 -->
+        <div class="flex items-center navbar-buttons flex-1 md:flex-none justify-end" id="navbar-buttons">
             <Search client:idle></Search>
             <Translator client:idle></Translator>
             <DisplaySettings client:idle></DisplaySettings>
@@ -59,6 +86,79 @@ let links: NavbarLink[] = navbarConfig.links.map(
         </div>
     </div>
 </div>
+
+<!-- 移动端侧边栏抽屉遮罩 -->
+<div id="sidebar-drawer-overlay" class="fixed inset-0 bg-black/40 z-[60] hidden md:hidden transition-opacity duration-300 opacity-0"></div>
+
+<!-- 移动端侧边栏抽屉 -->
+<div id="sidebar-drawer" class="fixed top-0 left-0 h-full w-72 z-[70] md:hidden transform -translate-x-full transition-transform duration-300 bg-(--card-bg) shadow-xl overflow-y-auto">
+    <div class="flex items-center justify-between px-4 h-18 border-b border-(--line-divider)">
+        <a href={url('/')} class="flex flex-row text-(--primary) items-center font-bold text-md">
+            <Icon name="material-symbols:home-pin-outline" class="text-[1.75rem] mb-1 mr-2" />
+            {siteConfig.title}
+        </a>
+        <button id="sidebar-drawer-close" aria-label="Close Sidebar" class="btn-plain scale-animation rounded-lg w-11 h-11 active:scale-90">
+            <Icon name="material-symbols:close-rounded" class="text-[1.25rem]" />
+        </button>
+    </div>
+    <div id="sidebar-drawer-content" class="p-4">
+        <!-- 侧边栏内容通过 JS 克隆注入 -->
+    </div>
+</div>
+
+<script>
+function initSidebarDrawer() {
+    const btn = document.getElementById('sidebar-drawer-btn');
+    const closeBtn = document.getElementById('sidebar-drawer-close');
+    const drawer = document.getElementById('sidebar-drawer');
+    const overlay = document.getElementById('sidebar-drawer-overlay');
+    const drawerContent = document.getElementById('sidebar-drawer-content');
+
+    if (!btn || !drawer || !overlay || !drawerContent) return;
+
+    function openDrawer() {
+        // 把 middle-sidebar 移入抽屉（保留事件监听器）
+        const middleSidebar = document.getElementById('middle-sidebar');
+        const slot = document.getElementById('middle-sidebar-slot');
+        if (middleSidebar && slot && slot.contains(middleSidebar)) {
+            drawerContent.appendChild(middleSidebar);
+        }
+
+        overlay.classList.remove('hidden');
+        requestAnimationFrame(() => {
+            overlay.classList.remove('opacity-0');
+            drawer.classList.remove('-translate-x-full');
+        });
+        document.body.style.overflow = 'hidden';
+    }
+
+    function closeDrawer() {
+        overlay.classList.add('opacity-0');
+        drawer.classList.add('-translate-x-full');
+        document.body.style.overflow = '';
+        setTimeout(() => {
+            overlay.classList.add('hidden');
+            // 移回原位
+            const middleSidebar = document.getElementById('middle-sidebar');
+            const slot = document.getElementById('middle-sidebar-slot');
+            if (middleSidebar && slot && drawerContent.contains(middleSidebar)) {
+                slot.appendChild(middleSidebar);
+            }
+        }, 300);
+    }
+
+    btn.addEventListener('click', openDrawer);
+    closeBtn?.addEventListener('click', closeDrawer);
+    overlay.addEventListener('click', closeDrawer);
+}
+
+if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initSidebarDrawer);
+} else {
+    initSidebarDrawer();
+}
+document.addEventListener('astro:after-swap', initSidebarDrawer);
+</script>
 
 <script>
 // 为semifull模式添加滚动检测逻辑

@@ -25,8 +25,21 @@ export function GithubCardComponent(properties, children) {
     const repo = properties.repo;
     const cardUuid = `GC${Math.random().toString(36).slice(-6)}`;
 
-    const nAvatar = h(`div#${cardUuid}-avatar`, { class: "gc-avatar" });
-    const nLanguage = h(`span#${cardUuid}-language`, { class: "gc-language" }, "Waiting...");
+    // 默认数据（fetch 失败时使用）
+    const defaultData = {
+        avatar: "https://avatars.githubusercontent.com/u/214225888?v=4&size=64",
+        description: "A blog built with Astro.",
+        stars: "0",
+        forks: "0",
+        license: "MIT",
+        language: "Astro",
+    };
+
+    const nAvatar = h(`div#${cardUuid}-avatar`, {
+        class: "gc-avatar",
+        style: `background-image: url(${defaultData.avatar});`,
+    });
+    const nLanguage = h(`span#${cardUuid}-language`, { class: "gc-language" }, defaultData.language);
 
     const nTitle = h("div", { class: "gc-titlebar" }, [
         h("div", { class: "gc-titlebar-left" }, [
@@ -43,12 +56,12 @@ export function GithubCardComponent(properties, children) {
     const nDescription = h(
         `div#${cardUuid}-description`,
         { class: "gc-description" },
-        "Waiting for api.github.com...",
+        defaultData.description,
     );
 
-    const nStars = h(`div#${cardUuid}-stars`, { class: "gc-stars" }, "00K");
-    const nForks = h(`div#${cardUuid}-forks`, { class: "gc-forks" }, "0K");
-    const nLicense = h(`div#${cardUuid}-license`, { class: "gc-license" }, "0K");
+    const nStars = h(`div#${cardUuid}-stars`, { class: "gc-stars" }, defaultData.stars);
+    const nForks = h(`div#${cardUuid}-forks`, { class: "gc-forks" }, defaultData.forks);
+    const nLicense = h(`div#${cardUuid}-license`, { class: "gc-license" }, defaultData.license);
 
     const nScript = h(
         `script#${cardUuid}-script`,
@@ -67,9 +80,9 @@ export function GithubCardComponent(properties, children) {
                 document.getElementById('${cardUuid}-card').classList.remove("fetch-waiting");
                 console.log("[GITHUB-CARD] Loaded card for ${repo} | ${cardUuid}.")
             }).catch(err => {
-                const c = document.getElementById('${cardUuid}-card');
-                c?.classList.add("fetch-error");
-                console.warn("[GITHUB-CARD] (Error) Loading card for ${repo} | ${cardUuid}.")
+                // fetch 失败时移除 loading 状态，保留默认数据正常显示
+                document.getElementById('${cardUuid}-card')?.classList.remove("fetch-waiting");
+                console.warn("[GITHUB-CARD] Using default data for ${repo} | ${cardUuid}.")
             });
         };
 
@@ -89,7 +102,7 @@ export function GithubCardComponent(properties, children) {
     return h(
         `a#${cardUuid}-card`,
         {
-            class: "card-github fetch-waiting no-styling",
+            class: "card-github no-styling",
             href: `https://github.com/${repo}`,
             target: "_blank",
             repo,
