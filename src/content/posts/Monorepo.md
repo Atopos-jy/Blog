@@ -4,7 +4,7 @@ published: 2026-03-23
 tags: [前端, Monorepo]
 category: 分类
 cover: https://raw.githubusercontent.com/Atopos-jy/image-host/main/images/%E5%AF%B9%E6%AF%94.png
-description: 文章描述
+description: Monorepo 单仓管理多包，通过工作区软链接实现本地依赖实时生效。pnpm/Yarn 支持 workspace:* 协议，根目录执行过滤命令，优势在于代码复用、依赖统一、配置复用。
 pinned: false
 draft: false
 ---

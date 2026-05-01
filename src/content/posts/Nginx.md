@@ -3,7 +3,7 @@ title: Nginx 入门与前端项目部署实战配置
 published: 2026-04-17
 tags: [Nginx]
 category: 分类
-description: 文章描述
+description: Nginx是高性能Web服务器，支持反向代理、负载均衡。部署前端时配置root指向dist，try_files解决路由404；配置/api反向代理至后端服务，实现生产环境跨域请求转发。
 cover: https://raw.githubusercontent.com/Atopos-jy/image-host/main/images/2291866-20210131094642778-86146076.jpg
 pinned: false
 draft: false

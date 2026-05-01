@@ -3,6 +3,7 @@ title: 开启 ES6 之旅：从解构到类，解锁 JavaScript 新范式
 published: 2025-09-27
 tags: [javascript]
 category: 前端
+cover: https://raw.githubusercontent.com/Atopos-jy/image-host/main/images/es6_class.png
 description: ES6 最新特性，助你高效开发！
 pinned: false
 draft: false

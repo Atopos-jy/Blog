@@ -4,7 +4,7 @@ published: 2025-9-21
 tags: [console]
 category: 工具
 cover: https://raw.githubusercontent.com/Atopos-jy/image-host/main/images/三个模块.png
-description: 文章描述
+description: JS调试方法：console.log简单直接，断点调试交互精准，try...catch捕获异常，debugger关键字触发暂停。结合浏览器开发者工具（Sources/Network面板），可高效定位代码问题。
 pinned: false
 draft: false
 ---

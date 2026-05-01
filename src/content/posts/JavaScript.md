@@ -1,8 +1,9 @@
 ---
 title: JavaScript基础
 published: 2025-09-06
-tags: [javascript]
-category: 前端
+tags: [javascript,前端]
+category: javascript
+cover: https://raw.githubusercontent.com/Atopos-jy/image-host/main/images/js.png
 description: JavaScript 最全知识体系总结，助你高效开发！
 pinned: false
 draft: false

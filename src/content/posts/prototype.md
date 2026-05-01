@@ -3,7 +3,8 @@ title: 原型和原型链
 published: 2025-10-12
 tags: [原型和原型链]
 category: 前端
-description: 文章描述
+cover: https://raw.githubusercontent.com/Atopos-jy/image-host/main/images/1759280201021.png
+description: 原型是对象共享属性和方法的机制，通过`prototype`定义，`__proto__`访问。原型链层层追溯，终点是`Object`。`class`基于原型的语法糖，`super`调用父类。
 pinned: false
 draft: false
 ---

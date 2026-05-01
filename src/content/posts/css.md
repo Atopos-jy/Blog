@@ -2,7 +2,8 @@
 title: 从入门到精通：CSS最全知识体系总结，助你高效开发！
 published: 2025-08-09
 tags: [css, flex]
-category: 前端
+category: css
+cover: https://i-blog.csdnimg.cn/direct/7f5c2d2b1b8c4160b526a623621da598.png
 description: CSS 最全知识体系总结，助你高效开发！
 pinned: false
 draft: false

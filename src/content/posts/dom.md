@@ -3,7 +3,7 @@ title: JavaScript事件入门，从基础到 DOM 交互
 published: 2025-9-27
 tags: [dom]
 category: 前端
-description: 文章描述
+description: 事件是JavaScript与DOM交互核心，通过监听用户行为或系统状态触发逻辑。推荐`addEventListener`绑定，理解事件捕获/冒泡流，利用事件对象实现灵活交互。
 pinned: false
 draft: false
 ---

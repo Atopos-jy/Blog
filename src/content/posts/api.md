@@ -1,9 +1,9 @@
 ---
 title: 前端js调用后端API的三种方法
 published: 2025-10-12
-tags: [前端, api]
+tags: [api]
 category: 工具
-description: 文章描述
+description: 三种方法：XMLHttpRequest原生兼容旧浏览器；jQuery Ajax简捷依赖库；axios/fetch现代Promise风格。选型取决于项目环境、兼容性与功能需求。
 pinned: false
 draft: false
 ---

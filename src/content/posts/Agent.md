@@ -3,8 +3,8 @@ title: 大模型为什么要进行瘦身？
 published: 2026-04-24
 tags: [skills]
 category: 分类
-cover: https://alidocs.oss-cn-zhangjiakou.aliyuncs.com/res/3BMqYybg0Yz0mqwZ/img/d57d5f55-2ccf-4f28-b2e4-fc599bf20525.png
-description: 文章描述
+cover: https://alidocs.oss-cn-zhangjiakou.aliyuncs.com/res/3BMqYybg0Yz0mqwZ/img/b3a9dabf-1733-4f7e-a938-be54461eda1f.png
+description: 大模型瘦身可突破存储、速度、成本、端侧部署四堵墙，核心有量化、剪枝、蒸馏三种方法；蒸馏衍生出女娲.skill（蒸馏名人）、dot-skill（蒸馏身边人），skills.sh 可便捷管理相关技能。
 pinned: false
 draft: false
 ---

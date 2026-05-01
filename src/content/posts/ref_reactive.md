@@ -3,7 +3,8 @@ title: Vue响应式数据全解析
 published: 2025-12-21
 tags: [Vue]
 category: Vue
-description: 文章描述
+cover: https://v2.cn.vuejs.org/images/data.png
+description: Vue2用`Object.defineProperty`，新增/删除属性需`$set/$delete`；Vue3用`Proxy+Reflect`，天然支持增删改查。基本类型用`ref`（`.value`），对象/数组用`reactive`。
 pinned: false
 draft: false
 ---

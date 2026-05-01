@@ -3,7 +3,7 @@ title: React 闭包陷阱深度解析
 published: 2026-02-03
 tags: [前端, React]
 category: React
-description: 文章描述
+description: React闭包陷阱本质：闭包捕获旧渲染周期状态。三大场景（定时器、异步、事件）解决方案：useRef存最新值、函数式更新、useEffect重建闭包、useCallback+memo防父子组件过期。
 pinned: false
 draft: false
 ---

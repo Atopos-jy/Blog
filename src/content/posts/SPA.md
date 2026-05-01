@@ -3,6 +3,7 @@ title: 前端页面切换的3种核心方法：从简单到SPA实践
 published: 2025-10-26
 tags: [SPA]
 category: 前端
+cover: https://raw.githubusercontent.com/Atopos-jy/image-host/main/images/演示.gif
 description: SPA 最全知识体系总结，助你高效开发！
 pinned: false
 draft: false

@@ -1,8 +1,9 @@
 ---
 title: HTML全攻略：标签、语义化、特殊字符及表单增强
 published: 2025-08-09
-tags: [html]
-category: 前端
+tags: [html,前端]
+category: html
+cover: https://i-blog.csdnimg.cn/direct/0b4b45534fc74332a7512f8ad4e9038a.png
 description: HTML 最全知识体系总结，助你高效开发！
 pinned: false
 draft: false

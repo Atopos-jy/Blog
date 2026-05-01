@@ -1,9 +1,10 @@
 ---
 title: Vue组件通信全攻略
 published: 2025-12-07
-tags: [前端, Vue]
+tags: [props, Vue]
 category: Vue
-description: 文章描述
+cover: https://raw.githubusercontent.com/Atopos-jy/image-host/main/images/wmiqyd0kkg.png
+description: Vue组件通信分三类：父子用props/emit、v-model；跨层用provide/inject；无关联用Vuex/Pinia。选型遵循“父传子props，子传父emit，复杂共享上状态管理”。
 pinned: false
 draft: false
 ---

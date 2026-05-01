@@ -1,9 +1,10 @@
 ---
 title: event
 published: 2025-11-08
-tags: [前端, event]
-category: 分类
-description: 文章描述
+tags: [event]
+category: 前端
+cover: https://raw.githubusercontent.com/Atopos-jy/image-host/main/images/屏幕截图 2025-09-14 145511.png
+description: 事件是JavaScript交互核心，监听用户/系统动作触发逻辑。推荐`addEventListener`，支持多处理函数、事件捕获/冒泡。通过事件对象获取详情，实现动态响应。
 pinned: false
 draft: false
 ---

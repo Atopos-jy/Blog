@@ -3,7 +3,7 @@ title: 为什么 mouseover 能做事件委托，mouseenter 却不行？
 published: 2025-11-08
 tags: [事件冒泡]
 category: 前端
-description: 文章描述
+description: `mouseenter` 不冒泡，无法用于事件委托；`mouseover` 支持冒泡，适合父元素监听子元素。实现“父听子触”需用 `mouseover`/`mouseout` 替代 `mouseenter`/`mouseleave`。
 pinned: false
 draft: false
 ---

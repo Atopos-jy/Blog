@@ -4,7 +4,7 @@ published: 2026-02-09
 tags: [前端, git]
 category: 工具
 cover: https://raw.githubusercontent.com/Atopos-jy/image-host/main/images/gitflow.png
-description: 文章描述
+description: GitFlow核心命令：从master/develop创建feature/release/hotfix分支，开发后合并回主分支并打标签。遵循命名规范，用`--no-ff`保留历史。
 pinned: false
 draft: false
 ---

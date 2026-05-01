@@ -3,7 +3,7 @@ title: 浅拷贝和深拷贝的区别
 published: 2025-11-23
 tags: [浅拷贝, 深拷贝]
 category: 前端
-description: 文章描述
+description: 浅拷贝复制表层，嵌套引用共享；深拷贝递归复制全部，数据完全独立。基础类型直接赋值，复杂数据按需选择
 pinned: false
 draft: false
 ---

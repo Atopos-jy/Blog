@@ -1,10 +1,10 @@
 ---
 title: Redux
 published: 2026-03-02
-tags: [前端, Redux]
-category: 分类
+tags: [Redux]
+category: React
 cover: https://raw.githubusercontent.com/Atopos-jy/image-host/main/images/Vuex.png
-description: 文章描述
+description: Redux是React集中状态管理工具，核心三要素：state（状态）、action（描述操作）、reducer（生成新状态）。推荐Redux Toolkit简化代码，实现单向数据流。
 pinned: false
 draft: false
 ---

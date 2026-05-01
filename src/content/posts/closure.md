@@ -3,7 +3,8 @@ title: 从 “变量消失” 到 “持久化”：闭包如何重塑 JavaScrip
 published: 2025-10-04
 tags: [closure]
 category: 前端
-description: 文章描述
+cover: https://alidocs.oss-cn-zhangjiakou.aliyuncs.com/res/pLdn55X30bbE5no8/img/99c2d0c2-f9b9-4231-95cf-3206a1118390.png
+description: 闭包是函数与其词法环境的组合，使内部函数可访问外部变量，延长生命周期。实现封装、模块化与柯里化，但需注意内存管理，避免滥用。
 pinned: false
 draft: false
 ---

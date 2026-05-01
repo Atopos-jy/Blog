@@ -1,9 +1,10 @@
 ---
 title: Vue3与Vite的区别
 published: 2025-12-27
-tags: [前端, Vue3]
+tags: [Vue3]
 category: Vue
-description: 文章描述
+cover:  https://raw.githubusercontent.com/Atopos-jy/image-host/main/images/1766805381463.png
+description: Vue3是前端框架，Vite是构建工具；Props父传子，需类型校验并遵循单向数据流，避免子组件直接修改
 pinned: false
 draft: false
 ---

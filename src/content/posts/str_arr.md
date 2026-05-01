@@ -1,9 +1,9 @@
 ---
 title: 字符串 → 数组（String → Array）
 published: 2025-11-29
-tags: [前端, string, array]
+tags: [string, array]
 category: 分类
-description: 文章描述
+description: 字符串转数组推荐`[...str]`或`Array.from`（支持Unicode），按分隔符用`split`。数组转字符串用`join`自定义连接符，`toString`快速逗号连接。
 pinned: false
 draft: false
 ---

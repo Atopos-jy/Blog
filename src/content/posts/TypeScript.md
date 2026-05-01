@@ -4,7 +4,7 @@ published: 2026-01-26
 tags: [前端, TypeScript]
 category: TS
 cover: https://raw.githubusercontent.com/Atopos-jy/image-host/main/images/1769432243325.png
-description: 文章描述
+description: TypeScript是带静态类型检查的JS超集，用类型注解、接口、类、泛型等约束代码，编译阶段发现错误，提升大型项目可维护性。
 pinned: false
 draft: false
 ---
