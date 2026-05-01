@@ -2,7 +2,7 @@
 title: Vue组件通信全攻略
 published: 2025-12-07
 tags: [前端, Vue]
-category: 分类
+category: Vue
 description: 文章描述
 pinned: false
 draft: false

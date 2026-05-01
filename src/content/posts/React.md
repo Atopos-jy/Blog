@@ -2,7 +2,7 @@
 title: React 闭包陷阱深度解析
 published: 2026-02-03
 tags: [前端, React]
-category: 分类
+category: React
 description: 文章描述
 pinned: false
 draft: false

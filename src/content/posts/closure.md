@@ -1,8 +1,8 @@
 ---
 title: 从 “变量消失” 到 “持久化”：闭包如何重塑 JavaScript 的作用域规则
 published: 2025-10-04
-tags: [前端, closure]
-category: 分类
+tags: [closure]
+category: 前端
 description: 文章描述
 pinned: false
 draft: false

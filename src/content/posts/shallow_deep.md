@@ -1,8 +1,8 @@
 ---
 title: 浅拷贝和深拷贝的区别
 published: 2025-11-23
-tags: [前端, 浅拷贝, 深拷贝]
-category: 分类
+tags: [浅拷贝, 深拷贝]
+category: 前端
 description: 文章描述
 pinned: false
 draft: false

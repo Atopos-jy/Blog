@@ -2,7 +2,8 @@
 title: Vue CLI 脚手架教程：从环境准备到项目启动的完整指南
 published: 2025-11-14
 tags: [vue]
-category: 前端
+category: Vue
+cover: https://raw.githubusercontent.com/Atopos-jy/image-host/main/images/1763039622407.png
 description: Vue CLI 最全知识体系总结，助你高效开发！
 pinned: false
 draft: false

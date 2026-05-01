@@ -1,8 +1,8 @@
 ---
 title: JavaScript事件入门，从基础到 DOM 交互
 published: 2025-9-27
-tags: [前端, dom]
-category: 分类
+tags: [dom]
+category: 前端
 description: 文章描述
 pinned: false
 draft: false

@@ -2,7 +2,8 @@
 title: git分支命令
 published: 2026-02-09
 tags: [前端, git]
-category: 分类
+category: 工具
+cover: https://raw.githubusercontent.com/Atopos-jy/image-host/main/images/gitflow.png
 description: 文章描述
 pinned: false
 draft: false

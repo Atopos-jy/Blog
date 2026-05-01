@@ -1,8 +1,9 @@
 ---
 title: console
 published: 2025-9-21
-tags: [前端, console]
-category: 分类
+tags: [console]
+category: 工具
+cover: https://raw.githubusercontent.com/Atopos-jy/image-host/main/images/三个模块.png
 description: 文章描述
 pinned: false
 draft: false

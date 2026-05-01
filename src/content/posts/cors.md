@@ -3,6 +3,7 @@ title: cors跨域请求
 published: 2026-04-05
 tags: [前端, cors]
 category: 前端
+cover: https://raw.githubusercontent.com/Atopos-jy/image-host/main/images/1775096712288.png
 description: 跨域请求详解
 pinned: false
 draft: false

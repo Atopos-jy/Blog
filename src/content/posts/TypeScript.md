@@ -2,7 +2,8 @@
 title: TypeScript知识点梳理
 published: 2026-01-26
 tags: [前端, TypeScript]
-category: 分类
+category: TS
+cover: https://raw.githubusercontent.com/Atopos-jy/image-host/main/images/1769432243325.png
 description: 文章描述
 pinned: false
 draft: false

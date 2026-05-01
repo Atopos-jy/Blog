@@ -3,6 +3,7 @@ title: Monorepo（多包架构）
 published: 2026-03-23
 tags: [前端, Monorepo]
 category: 分类
+cover: https://raw.githubusercontent.com/Atopos-jy/image-host/main/images/%E5%AF%B9%E6%AF%94.png
 description: 文章描述
 pinned: false
 draft: false

@@ -2,7 +2,7 @@
 title: 前端js调用后端API的三种方法
 published: 2025-10-12
 tags: [前端, api]
-category: 分类
+category: 工具
 description: 文章描述
 pinned: false
 draft: false

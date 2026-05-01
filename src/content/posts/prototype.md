@@ -1,8 +1,8 @@
 ---
 title: 原型和原型链
 published: 2025-10-12
-tags: [前端, 原型和原型链]
-category: 分类
+tags: [原型和原型链]
+category: 前端
 description: 文章描述
 pinned: false
 draft: false

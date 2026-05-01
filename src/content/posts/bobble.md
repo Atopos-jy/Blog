@@ -1,8 +1,8 @@
 ---
 title: 为什么 mouseover 能做事件委托，mouseenter 却不行？
 published: 2025-11-08
-tags: [前端, 事件冒泡]
-category: 分类
+tags: [事件冒泡]
+category: 前端
 description: 文章描述
 pinned: false
 draft: false

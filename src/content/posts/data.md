@@ -2,7 +2,7 @@
 title: 前端必备：玩转 DOM 的 dataset 属性与 HTML data-* 自定义属性
 published: 2025-11-01
 tags: [前端, dataset, data-*]
-category: 分类
+category: 前端
 description: 文章描述
 pinned: false
 draft: false

@@ -3,6 +3,7 @@ title: Redux
 published: 2026-03-02
 tags: [前端, Redux]
 category: 分类
+cover: https://raw.githubusercontent.com/Atopos-jy/image-host/main/images/Vuex.png
 description: 文章描述
 pinned: false
 draft: false
