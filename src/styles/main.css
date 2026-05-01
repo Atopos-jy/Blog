@@ -698,3 +698,8 @@
 :root:not(.dark) .custom-md spoiler {
     --_spoiler-mask: color-mix(in oklch, var(--primary) 55%, white 45%);
 }
+
+/* 鼠标特效 canvas 强制置顶 */
+body > canvas[style*="pointer-events: none"] {
+    z-index: 99999 !important;
+}

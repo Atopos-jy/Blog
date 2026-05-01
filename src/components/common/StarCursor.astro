@@ -1,49 +1,43 @@
 <script>
   if (typeof window !== "undefined") {
-    let cursorEffect;
-    let observer;
+    let cursorEffect: any;
+    let observer: MutationObserver;
+    let debounceTimer: ReturnType<typeof setTimeout>;
 
-    // 直接从 root 获取当前的 hue 值
     const getThemeColors = () => {
       const rootStyle = getComputedStyle(document.documentElement);
-      // 获取 --hue 变量，如果不存在则使用默认值（对应你 config 中的默认色相）
-      const hue = rootStyle.getPropertyValue("--hue").trim() || "260";
-      
-      // 模拟 variables.styl 的派生逻辑：hsl(hue, saturation, lightness)
-      // 这里的饱和度和亮度可以根据你 variables.styl 里的具体数值调整
-      const primary = `hsl(${hue}, 85%, 65%)`; 
-      const secondary = `hsl(${hue}, 70%, 75%)`;
-      
-      return [primary, secondary];
+      const hue = rootStyle.getPropertyValue("--hue").trim() || "255";
+      // 使用与主题一致的 oklch 色彩空间
+      const primary   = `oklch(0.70 0.14 ${hue})`;
+      const secondary = `oklch(0.80 0.10 ${hue})`;
+      const light     = `oklch(0.90 0.06 ${hue})`;
+      return [primary, secondary, light];
     };
 
     import("cursor-effects").then(({ fairyDustCursor }) => {
-      let lastHue = "";
 
-      const initOrRefresh = () => {
-        const rootStyle = getComputedStyle(document.documentElement);
-        const currentHue = rootStyle.getPropertyValue("--hue").trim();
-
-        // 只有当 hue 真正改变时才销毁重建，避免不必要的性能损耗
-        if (currentHue === lastHue) return;
-        lastHue = currentHue;
-
+      const rebuild = () => {
         if (cursorEffect && typeof cursorEffect.destroy === "function") {
           cursorEffect.destroy();
         }
-
         const colors = getThemeColors();
         cursorEffect = new fairyDustCursor({ colors });
       };
 
-      // 初始化
-      initOrRefresh();
+      // 防抖：拖动滑块时不频繁重建，停止拖动 150ms 后才重建
+      const debouncedRebuild = () => {
+        clearTimeout(debounceTimer);
+        debounceTimer = setTimeout(rebuild, 150);
+      };
 
-      // 监听根元素 style 属性的变化（hue.ts 修改的是 :root 的 style 属性）
+      // 初始化
+      rebuild();
+
+      // 监听 --hue 变化
       observer = new MutationObserver((mutations) => {
         for (const mutation of mutations) {
           if (mutation.type === "attributes" && mutation.attributeName === "style") {
-            initOrRefresh();
+            debouncedRebuild();
           }
         }
       });
@@ -53,7 +47,10 @@
         attributeFilter: ["style"]
       });
 
+      document.addEventListener('astro:after-swap', rebuild);
+
       window.addEventListener("beforeunload", () => {
+        clearTimeout(debounceTimer);
         observer?.disconnect();
         cursorEffect?.destroy?.();
       });
