@@ -1,3 +1,16 @@
+---
+title: Chrome DevTools MCP 在 react-admin 项目中的应用
+published: 2026-5-16
+tags: [MCP]
+category: 前端
+cover: https://media.licdn.com/dms/image/v2/D5612AQECHMXjoexilA/article-cover_image-shrink_720_1280/B56Zl.5cnNJsAM-/0/1758770620544?e=2147483647&v=beta&t=mCKZ4KmNzDVxP_GDYpkn5VX62DCy3Nh4RP3a_QE5nXc
+description: 文章系统介绍了 Claude Code 配合 Chrome DevTools MCP 做页面抓取、前端调试等的使用
+pinned: false
+draft: false
+---
+
+
+
 # Chrome DevTools MCP 在 react-admin 项目中的应用
 
 ## 前言
